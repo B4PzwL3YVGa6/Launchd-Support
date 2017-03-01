@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>OnDemand</key>
+    <false/>
+
+    <key>KeepAlive</key>
+    <true/>
+    
+    <key>RunAtLoad</key>
+    <true/>
+    
+    <!-- Contains a unique string that identifies your daemon to launchd.
+    This key is required. -->
+    <key>Label</key>
+    <string>com.template.autossh</string>
+
+    <!-- Contains the arguments [to exec()] used to launch your daemon.
+    This key is required.  -->
+    <key>ProgramArguments</key>
+    <array>
+      <!--split your command. My command is: 
+      /usr/local/bin/autossh -M 0 -NTq -F /Users/lea/.ssh/config luton
+      change to your own.
+      -->
+      <string>/usr/local/bin/autossh</string>
+      <string>-M</string>
+      <string>0</string>
+      <string>-NTq</string>
+      <string>-F</string>
+      <string>/Users/myname/.ssh/config</string>
+      <string>myhost</string>
+    </array>
+    
+    <!-- low priority -->
+    <key>Nice</key>
+    <integer>20</integer>
+    <key>LowPriorityIO</key>
+    <true/>
+</dict>
+</plist>

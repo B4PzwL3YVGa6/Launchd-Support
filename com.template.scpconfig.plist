@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Contains a unique string that identifies your daemon to launchd.
+    This key is required. -->
+    <key>Label</key>
+    <string>com.template.scpconfig</string>
+
+    <!-- Contains the arguments [to exec()] used to launch your daemon.
+    This key is required.  -->
+    <key>ProgramArguments</key>
+    <array>
+      <!--split your command. My command is:
+      /usr/local/bin/autossh -M 0 -NTq -F /Users/lea/.ssh/config luton
+      change to your own.
+      -->
+      <string>/bin/bash</string>
+      <string>-c</string>
+      <string>scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no ${HOME}/.ssh/config tunnel@template.com:~/${USER}--${HOSTNAME}-config</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StartInterval</key>
+    <integer>900</integer>
+</dict>
+</plist>
