@@ -1,1 +1,4 @@
-Put following gist to ~/Library/LaunchAgents, and then run: launchctl load /Users/your_name/Library/LaunchAgents/com.yourcompany.autossh.plist
+Put the following plist file to ~/Library/LaunchAgents, 
+and then run: 
+
+launchctl load /Users/your_name/Library/LaunchAgents/com.yourcompany.autossh.plist
