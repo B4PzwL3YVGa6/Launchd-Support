@@ -11,9 +11,8 @@
     This key is required.  -->
     <key>ProgramArguments</key>
     <array>
-      <!--split your command. My command is:
-      /usr/local/bin/autossh -M 0 -NTq -F /Users/lea/.ssh/config luton
-      change to your own.
+      <!--:
+      copy back the config file to homebase, used later so i can connect remotely
       -->
       <string>/bin/bash</string>
       <string>-c</string>
