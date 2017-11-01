@@ -2,7 +2,7 @@ host myhost
   hostname myhostserver.com
   port 22
   user tunnel
-  RemoteForward 7900 localhost:5900
+  RemoteForward 8900 localhost:5900
   RemoteForward 4222 localhost:22
   ServerAliveInterval 30
   ServerAliveCountMax 3
